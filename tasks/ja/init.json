@@ -1,0 +1,22 @@
+{
+  "description": "パッケージ状態の管理と確認",
+  "input_method": "stdin",
+  "parameters": {
+    "action": {
+      "description": "パッケージで実行する操作(インストール、ステータス、アンインストール、アップグレード)",
+      "type": "Enum[install, status, uninstall, upgrade]"
+    },
+    "name": {
+      "description": "操作するパッケージの名前",
+      "type": "String[1]"
+    },
+    "version": {
+      "description": "バージョン番号は、インストールするフルバージョンに一致する必要があります。プロバイダがリリース名を使用している場合はリリースも含めます。gemパッケージプロバイダを除き、範囲やsemverパターンは許可されません。例えば、rpm bash-4.1.2-29.el6.x86_64.rpmからbashパッケージをインストールするには、文字列'4.1.2-29.el6'を使用します。",
+      "type": "Optional[String[1]]"
+    },
+    "provider": {
+      "description": "パッケージの管理または確認に使用するプロバイダ。デフォルトはシステムパッケージマネージャ",
+      "type": "Optional[String[1]]"
+    }
+  }
+}
