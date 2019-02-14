@@ -1,0 +1,19 @@
+{
+  "description": "パッケージ状態の管理(puppet agentなし)",
+  "private": true,
+  "input_method": "environment",
+  "parameters": {
+    "action": {
+      "description": "パッケージに適用されるアクションは、インストール、アンインストール、およびアップグレードです。",
+      "type": "Enum[install, uninstall, upgrade]"
+    },
+    "name": {
+      "description": "管理するパッケージの名前。",
+      "type": "String[1]"
+    },
+    "version": {
+      "description": "パッケージのバージョンと、存在する場合はリリース値。バージョン番号の範囲や、semverパターンは許可されません。例えば、bash-4.1.2-29.el6.x86_64.rpmパッケージをインストールするには、4.1.2-29.el6と入力します。",
+      "type": "Optional[String[1]]"
+    }
+  }
+}
